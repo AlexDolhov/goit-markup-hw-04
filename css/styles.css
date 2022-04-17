@@ -18,6 +18,8 @@
 Цвет :hover на серых кнопках синий #2196F3
 Цвет бордера нижний у хедера #ECECEC
 Цвет бордера карточек портфолио #EEEEEE
+Team social icon color #AFB1B8
+Footer connect icons color rgba(255, 255, 255, 0.1);
 */
 /* Fonts
 Logo Raleway 700; 
@@ -27,21 +29,26 @@ li,h3 Roboto 500
 p Roboto 400 */
 
 :root {
-  --main-color: #FFFFFF;
+  --main-color: #ffffff;
   --header-logo-color: #000000;
-  --accent-color: #2196F3;
+  --accent-color: #2196f3;
   --title-color: #212121;
   --text-color: #757575;
   --text-color-secondary: rgba(255, 255, 255, 0.6);
-  --bg-color-first: #2F303A;
-  --bg-color-second: #F5F4FA;
-  --btn-color-hover: #188CE8;
-  --header-border: #ECECEC;
-  --portfolio-cars-border: #EEEEEE;
+  --bg-color-first: #2f303a;
+  --bg-color-second: #f5f4fa;
+  --btn-color-hover: #188ce8;
+  --header-border: #ececec;
+  --portfolio-cars-border: #eeeeee;
+  --social-icon-fill: #afb1b8;
+  --footer-icon-bg: rgba(255, 255, 255, 0.1);
 }
 /* Main preferences */
 
-h1,h2,h3,p{
+h1,
+h2,
+h3,
+p {
   margin: 0;
 }
 ul {
@@ -102,7 +109,7 @@ body {
   color: var(--header-logo-color);
 }
 
-/* Mainnav */
+/* Main nav */
 
 .main-nav {
   display: flex;
@@ -125,7 +132,7 @@ body {
   color: var(--title-color);
   font-weight: 500;
   line-height: 1.14;
-  letter-spacing: 0.02em;  
+  letter-spacing: 0.02em;
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -136,23 +143,33 @@ body {
   color: var(--accent-color);
 }
 
+/* Header contacts section */
+
 .header-contacts {
   display: flex;
   margin-left: auto;
 }
 
-.header-contacts .link { 
+.header-contacts .item + .item {
+  margin-left: 50px;
+}
+
+.header-contacts .link {
+  display: flex;
+  align-items: center;
+
   padding-top: 32px;
   padding-bottom: 32px;
-  
+
   color: var(--text-color);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
-.header-contacts .item + .item{
-  margin-left: 50px;
+.header-contacts .icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
 
 .header-contacts .link:hover,
@@ -167,9 +184,26 @@ body {
   background-color: var(--bg-color-first);
   padding: 200px auto;
   text-align: center;
+
+  max-width: 1600px;
+  height: 600px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../img/order-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.order-title{
+.order-title {
   color: var(--main-color);
   font-weight: 900;
   font-size: 44px;
@@ -182,13 +216,13 @@ body {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  }
+}
 
 /* Button */
 
-.order-button{ 
+.order-button {
   padding: 10px 32px;
-  
+
   color: var(--main-color);
   background-color: var(--accent-color);
   cursor: pointer;
@@ -207,7 +241,7 @@ body {
 }
 
 .order-button:hover,
-.order-button:focus {  
+.order-button:focus {
   background-color: var(--btn-color-hover);
 }
 
@@ -226,12 +260,24 @@ body {
   margin-left: 30px;
 }
 
+.advantages .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 120px;
+
+  background-color: var(--bg-color-second);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
 .advantages .title {
   margin-bottom: 10px;
 
   color: var(--title-color);
   font-weight: 700;
-  line-height: 1.14;  
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -272,7 +318,7 @@ body {
   background-color: var(--bg-color-second);
 }
 
-.team .list {
+.team-list {
   display: flex;
   justify-content: space-between;
 }
@@ -283,12 +329,11 @@ body {
 
 .team .item {
   padding-bottom: 30px;
-  
+
   background-color: var(--main-color);
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-  0px 1px 1px rgba(0, 0, 0, 0.14),
-  0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 .team img {
@@ -302,16 +347,94 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-  text-align: center;     
+  text-align: center;
   letter-spacing: 0.03em;
 }
 
 .team .text {
+  margin-bottom: 16px;
+
   font-size: 16px;
   line-height: 1.19;
   /* text-align: center; */
   letter-spacing: 0.03em;
   text-align: center;
+}
+
+/* -----Social----- */
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social-item + .social-item {
+  margin-left: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: var(--social-icon-fill);
+}
+
+.social-icon {
+  fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--main-color);
+  background-color: var(--accent-color);
+}
+
+/* Clients section */
+
+.clients .title {
+  margin-bottom: 50px;
+
+  color: var(--title-color);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.clients .list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients .item + .item {
+  margin-left: 30px;
+}
+
+.clients .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--social-icon-fill);
+  color: var(--social-icon-fill);
+  border-radius: 4px;
+}
+
+.clients .icon {
+  fill: currentColor;
+}
+
+.clients .link:hover,
+.clients .link:focus {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /* Footer section */
@@ -352,7 +475,58 @@ body {
 
 .footer .link:hover,
 .footer .link:focus {
-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Footer connect */
+.footer .container {
+  display: flex;
+}
+
+.connect {
+  margin-left: 70px;
+  margin-top: 12px;
+}
+
+.connect .title {
+  margin-bottom: 10px;
+
+  color: var(--main-color);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.connect .list {
+  display: flex;
+  justify-content: center;
+}
+
+.connect .item + .item {
+  margin-left: 10px;
+}
+
+.connect .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--footer-icon-bg);
+  color: var(--main-color);
+}
+
+.connect .icon {
+  fill: currentColor;
+}
+
+.connect .link:hover,
+.connect .link:focus {
+  background-color: var(--accent-color);
+  color: var(--main-color);
 }
 
 /* Porttfolio section */
@@ -366,17 +540,15 @@ color: var(--accent-color);
   margin-bottom: 34px;
 }
 
-
 .portfolio-filter .item + .item {
   margin-left: 8px;
 }
 
 .portfolio-filter-button {
-
   padding: 6px 22px;
 
   color: var(--title-color);
-  background-color:var(--bg-color-second);
+  background-color: var(--bg-color-second);
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -393,17 +565,15 @@ color: var(--accent-color);
   color: var(--main-color);
   background-color: var(--accent-color);
   /* shadow-middle */
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-  0px 1px 2px rgba(0, 0, 0, 0.08),
-  0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-filter-button.current {
   color: var(--main-color);
   background-color: var(--accent-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-  0px 1px 2px rgba(0, 0, 0, 0.08),
-  0px 2px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Portfolio content */
@@ -419,6 +589,16 @@ color: var(--accent-color);
   width: calc(100% / 3 - 30px);
   margin-left: 30px;
   margin-bottom: 30px;
+}
+
+.portfolio-content .link {
+  display: block;
+}
+
+.portfolio-content .link:hover,
+.portfolio-content .link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .item-info {
