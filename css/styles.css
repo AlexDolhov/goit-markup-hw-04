@@ -199,7 +199,6 @@ body {
     url(../img/order-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 
@@ -493,6 +492,7 @@ body {
 
   color: var(--main-color);
   font-weight: 700;
+  font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
