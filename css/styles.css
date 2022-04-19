@@ -126,6 +126,8 @@ body {
 }
 
 .site-nav .link {
+  display: block;
+
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -480,11 +482,11 @@ body {
 /* Footer connect */
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .connect {
   margin-left: 70px;
-  margin-top: 12px;
 }
 
 .connect .title {
@@ -516,17 +518,15 @@ body {
   height: 44px;
   border-radius: 50%;
   background-color: var(--footer-icon-bg);
-  color: var(--main-color);
 }
 
 .connect .icon {
-  fill: currentColor;
+  fill: var(--main-color);
 }
 
 .connect .link:hover,
 .connect .link:focus {
   background-color: var(--accent-color);
-  color: var(--main-color);
 }
 
 /* Porttfolio section */
